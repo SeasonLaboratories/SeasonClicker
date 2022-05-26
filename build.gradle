@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+group = 'store.seasonlabs'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    maven { url('https://oss.sonatype.org/content/groups/public/') }
+    maven { url('https://jitpack.io/') }
+    maven { url('https://repo.lucko.me/') }
+}
+
+dependencies {
+    compileOnly fileTree('libs')
+    compileOnly('me.lucko:helper:5.6.10')
+
+    def lombok = 'org.projectlombok:lombok:1.18.24'
+    def annotations = 'org.jetbrains:annotations:23.0.0'
+    compileOnly(lombok, annotations)
+    annotationProcessor(lombok, annotations)
+}
+
+shadowJar {
+    archiveName("${project.name}-${project.version}.jar")
+}

@@ -1,0 +1,26 @@
+database:
+  type: "sqlite"
+  mysql:
+    address: "localhost:3306"
+    username: "root"
+    password: ""
+    database: "test"
+  sqlite:
+    file: "database/SeasonClicker.sql"
+
+shop:
+  primavera-leaves:
+    view:
+      material: LEAVES
+        data: 0
+        amount: 1
+        hide-attributes: true
+        name: "&aFolha &7(Primavera)" ]
+        lore:
+          - "Está é uma folha da primavera!"
+    product:
+      #Este é identificador para pegar o item
+      #com o comando /seasonclicker giveproduct [product]
+      name: "FolhaPrimavera"
+      command:
+        - "alerta Uma mensagem incrível!"

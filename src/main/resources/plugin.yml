@@ -1,0 +1,5 @@
+name: SeasonClicker
+version: '${version}'
+main: store.seasonlabs.clicker.ClickerPlugin
+depend:
+  - SeasonAPI
